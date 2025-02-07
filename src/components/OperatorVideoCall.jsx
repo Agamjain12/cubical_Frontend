@@ -1,0 +1,1 @@
+socket.current = io(import.meta.env.VITE_BASE_URL); 
