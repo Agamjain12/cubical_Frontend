@@ -56,7 +56,10 @@ const OperatorVideoCall = () => {
     const storedUserData = JSON.parse(localStorage.getItem("userData"));
     setUserData(storedUserData);
 
-    socket.current = io("https://cubical-bw9p.onrender.com");
+    socket.current = io("https://cubical-bw9p.onrender.com", {
+      transports: ["websocket", "polling"],
+      withCredentials: true,
+    });
     socket.current.emit("register", { userId: storedUserData?.googleId });
 
     try {
