@@ -58,7 +58,7 @@ const VideoCall = () => {
     const storedUserData = JSON.parse(localStorage.getItem("userData"));
     setUserData(storedUserData);
 
-    socket.current = io("http://localhost:6600");
+    socket.current = io("https://cubical-bw9p.onrender.com");
     socket.current.emit("register", { userId: storedUserData?.googleId });
 
     // Handle incoming calls

@@ -11,7 +11,7 @@ function OperatorDashboard() {
 
   useEffect(() => {
     // Initialize socket connection
-    socket.current = io("http://localhost:6600");
+    socket.current = io("https://cubical-bw9p.onrender.com");
 
     // Register operator with their Google ID
     socket.current.emit("register", { userId: userData?.googleId });
